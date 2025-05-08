@@ -1,0 +1,83 @@
+:root {
+    /* Colors */
+    --primary: #2563eb;
+    --primary-rgb: 37, 99, 235;
+    --primary-dark: #1d4ed8;
+    --primary-light: #dbeafe;
+    --secondary: #3b82f6;
+    --secondary-light: #eff6ff;
+    --accent1: #10b981;
+    --accent2: #6366f1;
+    --accent3: #8b5cf6;
+    
+    /* Background colors */
+    --bg-light: #f8fafc;
+    --bg-dark: #1e293b;
+    --bg-muted: #f1f5f9;
+    
+    /* Text colors */
+    --text-dark: #1e293b;
+    --text-light: #f8fafc;
+    --text-muted: #64748b;
+    
+    /* Border colors */
+    --border-light: #e2e8f0;
+    --border-dark: #475569;
+    
+    /* UI elements */
+    --white: #ffffff;
+    --black: #000000;
+    --success: #22c55e;
+    --success-rgb: 34, 197, 94;
+    --warning: #f59e0b;
+    --warning-rgb: 245, 158, 11;
+    --danger: #ef4444;
+    --danger-rgb: 239, 68, 68;
+    
+    /* Shadow effects */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+    
+    /* Common settings */
+    --section-padding: 5rem 0;
+    --transition-fast: all 0.3s ease;
+    --transition-medium: all 0.5s ease;
+    --transition-slow: all 0.7s ease;
+    
+    /* Hero section wave color */
+    --wave-color: #f1f5f9;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --bg-light: #0f172a;
+    --bg-dark: #f8fafc;
+    --bg-muted: #1e293b;
+    
+    --text-dark: #f8fafc;
+    --text-light: #0f172a;
+    --text-muted: #cbd5e1;
+    
+    --border-light: #334155;
+    --border-dark: #e2e8f0;
+    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+    
+    --wave-color: #1e293b;
+}
+
+/* Theme transition effect */
+.theme-transition {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+html {
+    transition: background-color 0.5s ease;
+}
+
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}

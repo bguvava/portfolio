@@ -1,0 +1,16 @@
+{
+    "name": "bguvava/portfolio",
+    "description": "Brian Guvava's Portfolio Website",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "authors": [
+        {
+            "name": "Brian Guvava",
+            "email": "guvava.brian@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

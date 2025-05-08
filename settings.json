@@ -1,0 +1,66 @@
+{
+  "projectInfo": {
+    "name": "Brian Guvava",
+    "description": "Portflolio website for Brian Guvava",
+    "version": "1.0.0",
+    "repository": "github.com/bguvava/bguvava",
+    "author": "Brian Guvava",
+    "files": [
+      "c:/xampp/htdocs/bguvava/Features.txt",
+      "c:/xampp/htdocs/bguvava/Readme.txt",
+      "c:/xampp/htdocs/bguvava/assets/img/bguvava/bguvavacv.pdf",
+      "c:/xampp/htdocs/bguvava/assets/img/bguvava/profile.png",
+      "c:/xampp/htdocs/bguvava/settings.json",
+      "c:/xampp/htdocs/bguvava/Projects.txt"
+    ]
+  },
+
+  "directoryStructure": {
+    "root": "c:/xampp/htdocs/bguvava",
+    "assets": {
+      "css": "c:/xampp/htdocs/bguvava/assets/css",
+      "fonts": "c:/xampp/htdocs/bguvava/assets/fonts",
+      "img": "c:/xampp/htdocs/bguvava/assets/img",
+      "js": "c:/xampp/htdocs/bguvava/assets/js",
+      "uploads": "c:/xampp/htdocs/bguvava/assets/uploads"
+    },
+    "uploads": "c:/xampp/htdocs/bguvava/uploads",
+    "modals": "c:/xampp/htdocs/bguvava/modals",
+    "docs": "c:/xampp/htdocs/bguvava/docs",
+    "vendor": "c:/xampp/htdocs/bguvava/vendor",
+    "logs": "c:/xampp/htdocs/bguvava/logs"
+  },
+  "apiEndpoints": {
+    "contact": "/api/contact",
+    "projects": "/api/projects"
+  },
+  "dependencies": {
+    "frontend": [
+      "Bootstrap 5",
+      "jQuery",
+      "Chart.js",
+      "SweetAlert2",
+      "FullCalendar.js",
+      "DataTables.js",
+      "FontAwesome",
+      "Dropzone.js"
+    ],
+    "backend": [
+      "PHPMailer",
+      "FPDF/MPDF/TCPDF",
+      "PhpSpreadsheet"
+    ]
+  },
+  "colorPalette": {
+    "primary": "#2563eb",
+    "secondary": "#3b82f6",
+    "accent1": "#10b981",
+    "accent2": "#6366f1",
+    "accent3": "#8b5cf6",
+    "light": "#f8fafc",
+    "dark": "#1e293b",
+    "danger": "#ef4444",
+    "success": "#22c55e",
+    "warning": "#f59e0b"
+  }
+}
