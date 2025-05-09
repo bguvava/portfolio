@@ -8,15 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     if (!prefersReducedMotion) {
-        // Initialize animations only if user doesn't prefer reduced motion
-        // initCustomCursor(); // Disabled custom cursor
+        // Initialize animations
         initScrollAnimations();
         initSectionTransitions();
-        initHoverEffects();
+        initHoverEffects(); 
         initParallaxElements();
     } else {
-        // Add a class for CSS to handle reduced motion
-        document.body.classList.add('reduced-motion');
+        // Make all elements visible immediately for users who prefer reduced motion
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            el.classList.add('animated');
+        });
     }
 });
 

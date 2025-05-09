@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Initialize all functions
-    initThemeToggle();
     initScrollToTop();
     initSmoothScrolling();
     initNavbarToggle();
@@ -132,34 +131,6 @@ function initParticles() {
     }
 }
 
-// Update theme elements to handle particle colors
-function updateThemeElements(theme) {
-    const navbar = document.getElementById('mainNav');
-    const particlesContainer = document.getElementById('particles-js');
-    
-    if (theme === 'dark') {
-        navbar.classList.add('navbar-dark');
-        navbar.classList.remove('navbar-light');
-        
-        // Update particles color for dark mode if particles are initialized
-        if (particlesContainer && window.pJSDom && window.pJSDom.length > 0) {
-            window.pJSDom[0].pJS.particles.color.value = '#8b5cf6';
-            window.pJSDom[0].pJS.particles.line_linked.color = '#8b5cf6';
-            window.pJSDom[0].pJS.fn.particlesRefresh();
-        }
-    } else {
-        navbar.classList.add('navbar-light');
-        navbar.classList.remove('navbar-dark');
-        
-        // Update particles color for light mode if particles are initialized
-        if (particlesContainer && window.pJSDom && window.pJSDom.length > 0) {
-            window.pJSDom[0].pJS.particles.color.value = '#3b82f6';
-            window.pJSDom[0].pJS.particles.line_linked.color = '#3b82f6';
-            window.pJSDom[0].pJS.fn.particlesRefresh();
-        }
-    }
-}
-
 /**
  * Initialize preloader
  */
@@ -179,56 +150,6 @@ function initPreloader() {
                 }
             }, 500);
         });
-    }
-}
-
-/**
- * Dark/Light mode toggle functionality
- */
-function initThemeToggle() {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
-    
-    // Check for saved theme preference or use device preference
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const savedTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
-    
-    // Apply saved theme on page load
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(themeIcon, savedTheme);
-    
-    // Update theme-dependent elements
-    updateThemeElements(savedTheme);
-    
-    // Toggle theme on button click
-    themeToggleBtn.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        
-        updateThemeIcon(themeIcon, newTheme);
-        updateThemeElements(newTheme);
-        
-        // Add animation effect for theme transition
-        document.documentElement.classList.add('theme-transition');
-        setTimeout(() => {
-            document.documentElement.classList.remove('theme-transition');
-        }, 500);
-    });
-}
-
-/**
- * Update theme icon based on current theme
- */
-function updateThemeIcon(iconElement, theme) {
-    if (theme === 'dark') {
-        iconElement.classList.remove('fa-moon');
-        iconElement.classList.add('fa-sun');
-    } else {
-        iconElement.classList.remove('fa-sun');
-        iconElement.classList.add('fa-moon');
     }
 }
 
@@ -474,22 +395,6 @@ function initSkillsCharts() {
                 responsive: true,
                 maintainAspectRatio: true
             }
-        });
-        
-        // Update chart colors when theme changes
-        document.getElementById('theme-toggle').addEventListener('click', function() {
-            setTimeout(() => {
-                const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-dark');
-                const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-light');
-                const textMuted = getComputedStyle(document.documentElement).getPropertyValue('--text-muted');
-                
-                radarChart.options.scales.r.angleLines.color = borderColor;
-                radarChart.options.scales.r.grid.color = borderColor;
-                radarChart.options.scales.r.pointLabels.color = textColor;
-                radarChart.options.scales.r.ticks.color = textMuted;
-                
-                radarChart.update();
-            }, 500);
         });
     }
     
